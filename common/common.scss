@@ -3,6 +3,8 @@
   bottom: 40px;
   right: 40px;
   z-index: 999;
+  box-shadow: var(--shadow-card);
+  border-radius: 50%;
 
   .avatar {
     width: 80px;
