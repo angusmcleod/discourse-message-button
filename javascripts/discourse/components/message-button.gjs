@@ -21,13 +21,15 @@ export default class MessageButton extends Component {
     super(...arguments);
 
     User.findByUsername(username).then(user => {
-      this.user = user;
+      if (user) {
+        this.user = user;
+      }
     });
   }
 
   @action
   click() {
-    const subscriber = this.currentUser.groups.some(g => allowedGroups.includes(g.name));
+    const subscriber = this.currentUser && this.currentUser.groups.some(g => allowedGroups.includes(g.name));
 
     if (subscriber) {
       DiscourseURL.routeTo(`/new-message?username=${username}&title=Support%20Request`);
