@@ -12,3 +12,9 @@
     border: 1px solid var(--primary);
   }
 }
+
+body.has-full-page-chat {
+  .message-button {
+    display: none;
+  }
+}
