@@ -29,18 +29,12 @@ export default class MessageButton extends Component {
 
   @action
   click() {
-    const subscriber = this.currentUser && this.currentUser.groups.some(g => allowedGroups.includes(g.name));
-
-    if (subscriber) {
-      DiscourseURL.routeTo(`/new-message?username=${username}&title=Support%20Request`);
-    } else {
-      this.dialog.alert("Only subscribers can send me a message on this forum.");
-    }
+    DiscourseURL.routeTo(`/new-message?username=${username}&title=Support%20Request`);
   }
 
   <template>
     {{#if this.user}}
-      <a class="message-button" {{on "click" (fn this.click)}}>
+      <a id="message-button" class="message-button" {{on "click" (fn this.click)}}>
        {{avatar this.user imageSize="extra_large"}}
       </a>
     {{/if}}
