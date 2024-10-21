@@ -8,6 +8,7 @@ import avatar from "discourse/helpers/avatar";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import i18n from "discourse-common/helpers/i18n";
+import dIcon from "discourse-common/helpers/d-icon";
 
 const username = 'angus';
 const allowedGroups = ['subscribers'];
@@ -35,7 +36,7 @@ export default class MessageButton extends Component {
   <template>
     {{#if this.user}}
       <a id="message-button" class="message-button" {{on "click" (fn this.click)}}>
-       {{avatar this.user imageSize="extra_large"}}
+       {{dIcon "message"}}
       </a>
     {{/if}}
   </template>
