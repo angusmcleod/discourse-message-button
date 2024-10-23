@@ -12,7 +12,25 @@
     height: 35.6px;
     padding: 1em;
     color: var(--secondary);
-    transform: translateY(5px);
+    transform: translateY(3px);
+  }
+
+  .message-button-notification-count {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    background-color: var(--success);
+    color: var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 1em;
+    min-width: .6em;
+    padding: .21em .42em;
+    top: -1px;
+    right: 0;
   }
 }
 
@@ -20,4 +38,20 @@ body.has-full-page-chat {
   .message-button {
     display: none;
   }
+}
+
+.--channel .c-navbar__back-button {
+  display: none;
+
+  & + .c-navbar__channel-title {
+    margin-left: 0.65em;
+  }
+}
+
+.chat-header-icon {
+  display: none;
+}
+
+[data-section-name=chat-dms] .sidebar-section-header-button {
+  display: none;
 }

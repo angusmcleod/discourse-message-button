@@ -1,42 +1,37 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { fn } from "@ember/helper";
 import { on } from "@ember/modifier";
-import DiscourseURL from "discourse/lib/url";
-import User from "discourse/models/user";
-import avatar from "discourse/helpers/avatar";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import i18n from "discourse-common/helpers/i18n";
 import dIcon from "discourse-common/helpers/d-icon";
 
-const username = 'angus';
-const allowedGroups = ['subscribers'];
-
 export default class MessageButton extends Component {
-  @tracked user;
-  @service currentUser;
-  @service dialog;
+  @service router;
+  @service chatStateManager;
+  @service chatTrackingStateManager;
 
-  constructor() {
-    super(...arguments);
+  get notificationCount() {
+    return this.chatTrackingStateManager.directMessageUnreadCount;
+  }
 
-    User.findByUsername(username).then(user => {
-      if (user) {
-        this.user = user;
-      }
-    });
+  get showNotificationCount() {
+    return this.notificationCount > 0;
   }
 
   @action
-  click() {
-    DiscourseURL.routeTo(`/new-message?username=${username}&title=Support%20Request`);
+  async click() {
+    this.chatStateManager.prefersDrawer();
+    this.router.transitionTo(`/chat/c/angus/${this.args.channel.id}`);
   }
 
   <template>
-    {{#if this.user}}
+    {{#if @channel}}
       <a id="message-button" class="message-button" {{on "click" (fn this.click)}}>
-       {{dIcon "message"}}
+        {{#if this.showNotificationCount}}
+          <span class="message-button-notification-count">{{this.notificationCount}}</span>
+        {{/if}}
+        {{dIcon "d-chat"}}
       </a>
     {{/if}}
   </template>
