@@ -2,9 +2,7 @@ import Component from "@glimmer/component";
 import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 
-const username = 'angus';
-
-export default class MessageButtonContainer extends Component {
+export default class SupportButtonContainer extends Component {
   @service chat;
   @service currentUser;
   @tracked channel;
@@ -12,8 +10,8 @@ export default class MessageButtonContainer extends Component {
   constructor() {
     super(...arguments);
 
-    if (this.currentUser) {
-      this.chat.upsertDmChannel({ usernames: [username] }).then(channel => {
+    if (this.currentUser && settings.support_staff_username) {
+      this.chat.upsertDmChannel({ usernames: [settings.support_staff_username] }).then(channel => {
         this.channel = channel;
       });
     }

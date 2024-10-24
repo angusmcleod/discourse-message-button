@@ -1,5 +1,5 @@
-# Message Button
+# Support Button
 
-**Theme Summary**
+Adds a support button to your Discourse Forum.
 
 For more information, please see: **url to meta topic**

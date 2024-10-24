@@ -1,9 +1,9 @@
 {
-  "name": "Message Button Component",
+  "name": "Support Button Component",
   "component": true,
   "authors": "Angus McLeod",
-  "about_url": "https://github.com/angusmcleod/discourse-message-button",
-  "license_url": "https://github.com/angusmcleod/discourse-message-button/blob/main/LICENSE.txt",
+  "about_url": "https://github.com/angusmcleod/discourse-support-button",
+  "license_url": "https://github.com/angusmcleod/discourse-support-button/blob/main/LICENSE.txt",
   "learn_more": "TODO",
   "theme_version": "0.0.1"
 }

@@ -1,4 +1,4 @@
-.message-button {
+.support-button {
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -15,7 +15,7 @@
     transform: translateY(3px);
   }
 
-  .message-button-notification-count {
+  .support-button-notification-count {
     position: absolute;
     right: 0;
     top: -10px;
@@ -35,19 +35,19 @@
 }
 
 body.has-full-page-chat {
-  .message-button {
+  .support-button {
     display: none;
   }
 }
 
 body.chat-drawer-active {
-  .message-button {
+  .support-button {
     display: none;
   }
 }
 
 body.staff {
-  .message-button {
+  .support-button {
     display: none;
   }
 }

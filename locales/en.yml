@@ -1,5 +1,5 @@
 en:
   theme_metadata:
-    description: Adds a floating message button to a forum
+    description: Adds a support button to a forum
     settings:
       example_setting: A description of a setting.
