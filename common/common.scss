@@ -55,11 +55,19 @@ body:not(.staff) {
     display: none;
   }
 
+  [data-section-name=chat-dms] .sidebar-section-hover-button {
+    display: none;
+  }
+
   .--channel .c-navbar__back-button {
     display: none;
   
     & + .c-navbar__channel-title {
       margin-left: 0.65em;
     }
+  }
+
+  .c-navbar__channel-title {
+    pointer-events: none;
   }
 }

@@ -22,7 +22,8 @@ export default class MessageButton extends Component {
   @action
   async click() {
     this.chatStateManager.prefersDrawer();
-    this.router.transitionTo(`/chat/c/angus/${this.args.channel.id}`);
+    const channel = this.args.channel;
+    this.router.transitionTo(`/chat/c/${channel.slugifiedTitle}/${channel.id}`);
   }
 
   <template>
