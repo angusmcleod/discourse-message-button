@@ -22,25 +22,24 @@ export default class MessageButton extends Component {
   @action
   async click() {
     this.chatStateManager.prefersDrawer();
-    const channel = this.args.channel;
-    this.router.transitionTo(`/chat/c/${channel.slugifiedTitle}/${channel.id}`);
+    this.router.transitionTo(
+      `/chat/c/${this.args.channel.slugifiedTitle}/${this.args.channel.id}`
+    );
   }
 
   <template>
-    {{#if @channel}}
-      <a
-        id="support-button"
-        class="support-button"
-        {{on "click" this.click}}
-        role="button"
-      >
-        {{#if this.showNotificationCount}}
-          <span
-            class="support-button-notification-count"
-          >{{this.notificationCount}}</span>
-        {{/if}}
-        {{dIcon "d-chat"}}
-      </a>
-    {{/if}}
+    <a
+      id="support-button"
+      class="support-button"
+      {{on "click" this.click}}
+      role="button"
+    >
+      {{#if this.showNotificationCount}}
+        <span
+          class="support-button-notification-count"
+        >{{this.notificationCount}}</span>
+      {{/if}}
+      {{dIcon "d-chat"}}
+    </a>
   </template>
 }

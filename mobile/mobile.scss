@@ -1,0 +1,16 @@
+.support-button {
+  bottom: 20px;
+  right: 20px;
+
+  .d-icon {
+    width: 30px;
+    height: 25.6px;
+    padding: 1em;
+    color: var(--secondary);
+    transform: translateY(3px);
+  }
+}
+
+body.archetype-regular .support-button {
+  bottom: 60px;
+}
