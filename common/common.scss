@@ -40,6 +40,12 @@ body.has-full-page-chat {
   }
 }
 
+body.chat-drawer-active {
+  .message-button {
+    display: none;
+  }
+}
+
 body.staff {
   .message-button {
     display: none;
