@@ -48,10 +48,12 @@ body.has-full-page-chat {
   }
 }
 
-.chat-header-icon {
-  display: none;
-}
-
-[data-section-name=chat-dms] .sidebar-section-header-button {
-  display: none;
+body:not(.staff) {
+  .chat-header-icon {
+    display: none;
+  }
+  
+  [data-section-name=chat-dms] .sidebar-section-header-button {
+    display: none;
+  }
 }
