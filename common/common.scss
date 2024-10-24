@@ -40,11 +40,9 @@ body.has-full-page-chat {
   }
 }
 
-.--channel .c-navbar__back-button {
-  display: none;
-
-  & + .c-navbar__channel-title {
-    margin-left: 0.65em;
+body.staff {
+  .message-button {
+    display: none;
   }
 }
 
@@ -52,8 +50,16 @@ body:not(.staff) {
   .chat-header-icon {
     display: none;
   }
-  
+
   [data-section-name=chat-dms] .sidebar-section-header-button {
     display: none;
+  }
+
+  .--channel .c-navbar__back-button {
+    display: none;
+  
+    & + .c-navbar__channel-title {
+      margin-left: 0.65em;
+    }
   }
 }
