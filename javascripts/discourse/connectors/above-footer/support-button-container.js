@@ -11,9 +11,11 @@ export default class SupportButtonContainer extends Component {
     super(...arguments);
 
     if (this.currentUser && settings.support_staff_username) {
-      this.chat.upsertDmChannel({ usernames: [settings.support_staff_username] }).then(channel => {
-        this.channel = channel;
-      });
+      this.chat
+        .upsertDmChannel({ usernames: [settings.support_staff_username] })
+        .then((channel) => {
+          this.channel = channel;
+        });
     }
   }
 }

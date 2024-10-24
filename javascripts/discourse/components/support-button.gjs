@@ -28,9 +28,16 @@ export default class MessageButton extends Component {
 
   <template>
     {{#if @channel}}
-      <a id="support-button" class="support-button" {{on "click" (fn this.click)}}>
+      <a
+        id="support-button"
+        class="support-button"
+        {{on "click" this.click}}
+        role="button"
+      >
         {{#if this.showNotificationCount}}
-          <span class="support-button-notification-count">{{this.notificationCount}}</span>
+          <span
+            class="support-button-notification-count"
+          >{{this.notificationCount}}</span>
         {{/if}}
         {{dIcon "d-chat"}}
       </a>
